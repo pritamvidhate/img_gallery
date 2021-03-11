@@ -4,9 +4,8 @@ const Imagecard = ({image}) => {
     const tags = image.tags.split(',');
 
     return (
-    <div className = "max-w-sm rounded overflow-hidden shadow-lg">
-        <img src={image.webformatURL} alt="images"
-        className = "w-full"/>
+    <div className = "max-w-sm bg-gray-100 rounded overflow-hidden shadow-lg mb-2 m-2">
+        <img src={image.webformatURL} alt="images" className = "w-full"/>
         <div className="px-6 py-4">
             <div className="font-bold text-red-500 text-xl mb-2">
                 Photo by {image.user}
@@ -31,7 +30,7 @@ const Imagecard = ({image}) => {
         </div>
         <div className="px-6 py-4">
         {tags.map(tag =>(
-            <span className="inline-block bg-gray-200 rounded-full
+            <span key = {image.id} className="inline-block bg-gray-200 rounded-full
             px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
             #{tag}
             </span>
